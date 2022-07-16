@@ -2,17 +2,17 @@ package main
 
 import (
 	"context"
-	"github.com/gorilla/mux"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"time"
+
+	"github.com/Serzhanov/Microservies-Go-Lang/handlers"
+	"github.com/gorilla/mux"
 )
 
-
 func main() {
-
 
 	l := log.New(os.Stdout, "my logger:", log.LstdFlags)
 
@@ -37,7 +37,7 @@ func main() {
 
 	// create a new server
 	s := http.Server{
-		Addr:         ":9090",      // configure the bind address
+		Addr:         ":9090",           // configure the bind address
 		Handler:      sm,                // set the default handler
 		ErrorLog:     l,                 // set the logger for the server
 		ReadTimeout:  5 * time.Second,   // max time to read request from the client

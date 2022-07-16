@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/Serzhanov/Microservies-Go-Lang/products"
 	"github.com/gorilla/mux"
-	
 )
 
 // Products is a http.Handler
@@ -23,7 +23,7 @@ func NewProducts(l *log.Logger) *Products {
 // getProducts returns the products from the products store
 func (p *Products) GetProducts(rw http.ResponseWriter, r *http.Request) {
 	p.l.Println("Handle GET Products")
-	
+
 	// fetch the products from the productsstore
 	lp := products.GetProducts()
 
