@@ -16,7 +16,6 @@ func main() {
 
 	l := log.New(os.Stdout, "my logger:", log.LstdFlags)
 
-	// create the handlers
 	ph := handlers.NewProducts(l)
 
 	// create a new serve mux and register the handlers
